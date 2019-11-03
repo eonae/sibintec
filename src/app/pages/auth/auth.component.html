@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <h3 class="form-caption">Sign In</h3>
+    <div class="form-group">
+      <label>Mobile phone:</label>
+      <input
+        type="text"
+        formControlName="phone"
+        prefix="+7"
+        mask=" (000) 000-00-00"
+      >
+      <div class="errors" *ngIf="validationError('phone').exists">
+        {{ validationError('phone').message }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input
+        type="password"
+        formControlName="password"
+      >
+      <div class="errors" *ngIf="validationError('password').exists">
+        {{ validationError('password').message }}
+      </div>
+    </div>
+    <button #submitBtn type="submit" [disabled]="loginForm.invalid">Confirm</button>
+  </form>
+</div>

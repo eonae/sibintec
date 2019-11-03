@@ -1,0 +1,5 @@
+<div [ngSwitch]="stage">
+  <app-auth *ngSwitchCase="0" (login)="goToConfirm()"></app-auth>
+  <app-payment *ngSwitchCase="1" (action)="goToStatus($event)"></app-payment>
+  <app-status *ngSwitchCase="2" [status]="paymentConfirmed"></app-status>
+</div>

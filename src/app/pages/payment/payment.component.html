@@ -1,0 +1,20 @@
+<div class="container">
+  <h3 class="caption">Payment confirmation</h3>
+  <table>
+    <tr>
+      <td class="label">Balance</td>
+      <td class="sum">{{ balance | currency:'RUB':'symbol-narrow' }}</td>
+    </tr>
+    <tr>
+      <td class="label">Total</td>
+      <td class="sum">{{ total | currency:'RUB':'symbol-narrow' }}</td>
+    </tr>
+  </table>
+  <div class="error" *ngIf="balance-total<0">
+    Insufficient funds!
+  </div>
+  <div class="action-buttons">
+    <button [disabled]="balance-total<0" (click)="confirm()">Confirm</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>
+</div>
