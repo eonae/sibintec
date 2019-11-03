@@ -1,7 +1,6 @@
 # Sibintec
 
 This project is solution to test task by SIBINTEC company.
-Backend starts by ``
 
 ## Backend
 
